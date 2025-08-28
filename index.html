@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shappi's Driving School - Code B2 License Namibia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
         }
@@ -24,6 +25,14 @@
             padding: 1rem;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
         }
         
         .logo-container {
@@ -51,19 +60,32 @@
             100% { transform: translateX(-10px); }
         }
         
+        .location {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
         nav {
             background-color: #333;
             padding: 0.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
+            flex-wrap: wrap;
         }
         
         nav ul li {
-            margin: 0 15px;
+            margin: 5px 15px;
         }
         
         nav ul li a {
@@ -71,10 +93,14 @@
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
         
         nav ul li a:hover {
             color: #ffcc00;
+            background: rgba(255, 255, 255, 0.1);
         }
         
         .container {
@@ -91,6 +117,7 @@
             border-radius: 10px;
             margin-bottom: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         
         .hero h2 {
@@ -179,6 +206,12 @@
             margin-bottom: 1rem;
         }
         
+        .service-card i {
+            font-size: 2.5rem;
+            color: #d10000;
+            margin-bottom: 1rem;
+        }
+        
         .signs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -243,6 +276,40 @@
             border-radius: 5px;
         }
         
+        .quotes-section {
+            background: linear-gradient(135deg, #d10000 0%, #8b0000 100%);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .quote {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-style: italic;
+            font-size: 1.2rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        
+        .quote i {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+        
+        .quote i:first-child {
+            top: -10px;
+            left: 0;
+        }
+        
+        .quote i:last-child {
+            bottom: -10px;
+            right: 0;
+        }
+        
         footer {
             background: #333;
             color: white;
@@ -258,6 +325,21 @@
             vertical-align: middle;
         }
         
+        .social-links {
+            margin: 1rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #ffcc00;
+        }
+        
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -271,31 +353,41 @@
             .hero h2 {
                 font-size: 2rem;
             }
+            
+            .logo {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo-container">
-            <div class="logo">SHAPPI'S DRIVING</div>
-            <div class="car-icon">🚗</div>
+        <div class="header-content">
+            <div class="logo-container">
+                <div class="logo">SHAPPI'S DRIVING</div>
+                <div class="car-icon">🚗</div>
+            </div>
+            <p>Professional Code B2 Driving School in Namibia</p>
+            <div class="location">
+                <i class="fas fa-map-marker-alt"></i> Katima Mulilo, Zambezi Region, Namibia <span class="flag">🇳🇦</span>
+            </div>
         </div>
-        <p>Professional Code B2 Driving School in Namibia</p>
     </header>
     
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#signs">Road Signs</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+            <li><a href="#signs"><i class="fas fa-traffic-light"></i> Road Signs</a></li>
+            <li><a href="#car"><i class="fas fa-car"></i> Our Vehicle</a></li>
+            <li><a href="#contact"><i class="fas fa-phone"></i> Contact</a></li>
         </ul>
     </nav>
     
     <div class="container">
         <section id="home" class="hero">
             <h2>Learn to Drive with Confidence</h2>
-            <p>Professional driving lessons for Code B2 license in Namibia. Our experienced instructors will help you become a safe and confident driver on the road.</p>
+            <p>Professional driving lessons for Code B2 license in Katima Mulilo, Namibia. Our experienced instructors will help you become a safe and confident driver on the road.</p>
             <div class="price-tag">Only N$ 180 per hour</div>
             <p>Flexible scheduling • Patient instructors • Modern vehicles</p>
             <a href="#contact" class="btn">Book Your Lesson Now</a>
@@ -304,16 +396,38 @@
         <h2 class="section-title">Our Services</h2>
         <section id="services" class="services">
             <div class="service-card">
+                <i class="fas fa-user-graduate"></i>
                 <h3>Beginner Lessons</h3>
                 <p>Perfect for those who have never driven before. We'll start with the basics and build your confidence.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-file-alt"></i>
                 <h3>License Test Preparation</h3>
                 <p>Get ready for your Code B2 driving test with our comprehensive preparation lessons.</p>
             </div>
             <div class="service-card">
+                <i class="fas fa-sync-alt"></i>
                 <h3>Refresher Courses</h3>
                 <p>Already have a license but need to brush up on your skills? Our refresher courses are perfect for you.</p>
+            </div>
+        </section>
+        
+        <section class="quotes-section">
+            <h2 class="section-title" style="color: white;">Driving Wisdom</h2>
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                The best car safety device is a rear-view mirror with a cop in it.
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                Driving is a skill, but safe driving is an attitude.
+                <i class="fas fa-quote-right"></i>
+            </div>
+            <div class="quote">
+                <i class="fas fa-quote-left"></i>
+                The road is a canvas, and your driving is the brush. Paint a masterpiece of safety.
+                <i class="fas fa-quote-right"></i>
             </div>
         </section>
         
@@ -337,7 +451,7 @@
             </div>
         </section>
         
-        <section class="car-showcase">
+        <section id="car" class="car-showcase">
             <h2>Our Training Vehicle</h2>
             <p>Learn to drive in our modern, well-maintained red Kia Picanto</p>
             <img class="car-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150' viewBox='0 0 300 150'><rect x='30' y='60' width='240' height='50' rx='10' fill='red'/><rect x='40' y='30' width='80' height='40' rx='5' fill='red'/><rect x='180' y='30' width='80' height='40' rx='5' fill='red'/><circle cx='80' cy='120' r='20' fill='%23333'/><circle cx='220' cy='120' r='20' fill='%23333'/><circle cx='80' cy='120' r='10' fill='%23ccc'/><circle cx='220' cy='120' r='10' fill='%23ccc'/></svg>" alt="Red Kia Picanto">
@@ -348,15 +462,41 @@
         <section id="contact" class="contact-info">
             <h3>Get in touch to book your driving lessons</h3>
             <p>We're available 7 days a week from 8:00 AM to 6:00 PM</p>
-            <a href="tel:+264817733496" class="phone">+264 81 773 3496</a>
+            <a href="tel:+264817733496" class="phone"><i class="fas fa-phone"></i> +264 81 773 3496</a>
             <p>Email: shappisdriving@example.com</p>
-            <p>Location: Windhoek, Namibia <span class="flag">🇳🇦</span></p>
+            <p>Location: Katima Mulilo, Zambezi Region, Namibia <span class="flag">🇳🇦</span></p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </section>
     </div>
     
     <footer>
         <p>&copy; 2023 Shappi's Driving School. All rights reserved.</p>
-        <p>Professional Code B2 Driving Lessons in Namibia <span class="flag">🇳🇦</span></p>
+        <p>Professional Code B2 Driving Lessons in Katima Mulilo, Namibia <span class="flag">🇳🇦</span></p>
     </footer>
+
+    <script>
+        // Simple JavaScript for smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 60,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Update copyright year automatically
+        document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} Shappi's Driving School. All rights reserved.`;
+    </script>
 </body>
-</html>
+    </html>
