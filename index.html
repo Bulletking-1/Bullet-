@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shappi's Driving School - Code B2 License Namibia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #d10000 0%, #8b0000 100%);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-right: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .car-icon {
+            font-size: 2rem;
+            animation: drive 3s infinite;
+        }
+        
+        @keyframes drive {
+            0% { transform: translateX(-10px); }
+            50% { transform: translateX(10px); }
+            100% { transform: translateX(-10px); }
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23d10000" opacity="0.1"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23d10000" stroke-width="1" opacity="0.1"/></svg>');
+            background-size: cover;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #d10000;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .price-tag {
+            background-color: #ffcc00;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.5rem;
+            padding: 0.5rem 1.5rem;
+            display: inline-block;
+            border-radius: 30px;
+            margin: 1rem 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #d10000;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background: #8b0000;
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #d10000;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #d10000;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            color: #d10000;
+            margin-bottom: 1rem;
+        }
+        
+        .signs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .sign {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .sign img {
+            max-width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+        
+        .car-showcase {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .car-image {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin: 1rem 0;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: #d10000;
+            margin-bottom: 1rem;
+        }
+        
+        .phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background: #f5f5f5;
+            border-radius: 5px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .flag {
+            display: inline-block;
+            margin: 0 5px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo">SHAPPI'S DRIVING</div>
+            <div class="car-icon">🚗</div>
+        </div>
+        <p>Professional Code B2 Driving School in Namibia</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#signs">Road Signs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="home" class="hero">
+            <h2>Learn to Drive with Confidence</h2>
+            <p>Professional driving lessons for Code B2 license in Namibia. Our experienced instructors will help you become a safe and confident driver on the road.</p>
+            <div class="price-tag">Only N$ 180 per hour</div>
+            <p>Flexible scheduling • Patient instructors • Modern vehicles</p>
+            <a href="#contact" class="btn">Book Your Lesson Now</a>
+        </section>
+        
+        <h2 class="section-title">Our Services</h2>
+        <section id="services" class="services">
+            <div class="service-card">
+                <h3>Beginner Lessons</h3>
+                <p>Perfect for those who have never driven before. We'll start with the basics and build your confidence.</p>
+            </div>
+            <div class="service-card">
+                <h3>License Test Preparation</h3>
+                <p>Get ready for your Code B2 driving test with our comprehensive preparation lessons.</p>
+            </div>
+            <div class="service-card">
+                <h3>Refresher Courses</h3>
+                <p>Already have a license but need to brush up on your skills? Our refresher courses are perfect for you.</p>
+            </div>
+        </section>
+        
+        <h2 class="section-title">Important Road Signs</h2>
+        <section id="signs" class="signs-container">
+            <div class="sign">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='red' stroke-width='5'/><line x1='20' y1='20' x2='80' y2='80' stroke='red' stroke-width='5'/></svg>" alt="No Entry Sign">
+                <h3>No Entry</h3>
+            </div>
+            <div class="sign">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><rect x='10' y='10' width='80' height='80' fill='none' stroke='red' stroke-width='5'/><circle cx='50' cy='50' r='20' fill='none' stroke='red' stroke-width='5'/></svg>" alt="No Parking Sign">
+                <h3>No Parking</h3>
+            </div>
+            <div class="sign">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><polygon points='50,10 90,90 10,90' fill='none' stroke='red' stroke-width='5'/></svg>" alt="Yield Sign">
+                <h3>Yield</h3>
+            </div>
+            <div class="sign">
+                <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='none' stroke='red' stroke-width='5'/></svg>" alt="Prohibition Sign">
+                <h3>Prohibition</h3>
+            </div>
+        </section>
+        
+        <section class="car-showcase">
+            <h2>Our Training Vehicle</h2>
+            <p>Learn to drive in our modern, well-maintained red Kia Picanto</p>
+            <img class="car-image" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='150' viewBox='0 0 300 150'><rect x='30' y='60' width='240' height='50' rx='10' fill='red'/><rect x='40' y='30' width='80' height='40' rx='5' fill='red'/><rect x='180' y='30' width='80' height='40' rx='5' fill='red'/><circle cx='80' cy='120' r='20' fill='%23333'/><circle cx='220' cy='120' r='20' fill='%23333'/><circle cx='80' cy='120' r='10' fill='%23ccc'/><circle cx='220' cy='120' r='10' fill='%23ccc'/></svg>" alt="Red Kia Picanto">
+            <p>Easy to handle • Dual controls • Air conditioned • Safety features</p>
+        </section>
+        
+        <h2 class="section-title">Contact Us</h2>
+        <section id="contact" class="contact-info">
+            <h3>Get in touch to book your driving lessons</h3>
+            <p>We're available 7 days a week from 8:00 AM to 6:00 PM</p>
+            <a href="tel:+264817733496" class="phone">+264 81 773 3496</a>
+            <p>Email: shappisdriving@example.com</p>
+            <p>Location: Windhoek, Namibia <span class="flag">🇳🇦</span></p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Shappi's Driving School. All rights reserved.</p>
+        <p>Professional Code B2 Driving Lessons in Namibia <span class="flag">🇳🇦</span></p>
+    </footer>
+</body>
+</html>
